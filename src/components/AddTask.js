@@ -1,15 +1,50 @@
 import { useState } from "react";
+import Swal from 'sweetalert';
+
 
 const AddTask = ({ onAdd }) => {
   const [text, setText] = useState("");
   const [day, setDay] = useState("");
   const [reminder, setReminder] = useState(false);
 
+  const showAlert = (words) => {
+    // Swal("Task can not be empty!");
+    Swal({
+      title: "Error",
+      text: words,
+      icon: "warning",
+      buttons: false,
+      dangerMode: false,
+      buttons: {
+        ok: "OK"
+      },
+    })
+  };
+
+  const showAdd = (words) => {
+    Swal({
+      title: "Success",
+      text: words,
+      icon: "success",
+      buttons: false,
+      dangerMode: false,
+      buttons: {
+        ok: "OK"
+      },
+    })
+  };
+
   const onSubmit = (e) => {
     e.preventDefault();
     if(!text){
-        alert('Task Can not be empty!')
+        // alert('Task Can not be empty!')
+        showAlert('Task can not be empty!')
         return
+    }
+
+    if(!day){
+      showAlert('Day can not be empty!')
+      return
     }
 
     onAdd({text, day, reminder})
@@ -17,6 +52,8 @@ const AddTask = ({ onAdd }) => {
     setText('')
     setDay('')
     setReminder(false)
+
+    showAdd('Data berhasil disimpan')
   };
   return (
     <form

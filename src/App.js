@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Tasks from "./components/Tasks";
 import "bootstrap/dist/css/bootstrap.min.css";
 import AddTask from "./components/AddTask";
+import Swal from 'sweetalert';
 
 function App() {
   const [showAddTask, setShowAddTask] = useState(false);
@@ -70,6 +71,32 @@ function App() {
     },
   ]);
 
+  const showDelete = (words) => {
+    Swal({
+      title: "Deleted",
+      text: words,
+      icon: "warning",
+      buttons: false,
+      dangerMode: false,
+      buttons: {
+        ok: "OK"
+      },
+    })
+  };
+
+  const showToggle = (words) => {
+    Swal({
+      title: "Success",
+      text: words,
+      icon: "success",
+      buttons: false,
+      dangerMode: false,
+      buttons: {
+        ok: "OK"
+      },
+    })
+  };
+
   const addTask = (task) => {
     // console.log(task);
     const id = Math.floor(Math.random() * 100) + 1;
@@ -80,6 +107,7 @@ function App() {
   const deleteTask = (id) => {
     // alert(`delete  ${id}`)
     setTasks(tasks.filter((task) => task.id !== id));
+    showDelete('Data berhasil dihapus!')
   };
 
   const toggleReminder = (id) => {
@@ -89,6 +117,8 @@ function App() {
         task.id === id ? { ...task, reminder: !task.reminder } : task
       )
     );
+
+    showToggle('Reminder Set')
   };
   return (
     <div className="App">
