@@ -1,8 +1,9 @@
 # React Task Application
 
 ## Libs
-- Using Bootstrap for styling, 
-- json-server for mockup API
+- Using Bootstrap for styling,  (`npm install bootstrap`)
+- json-server for mockup API (`npm install json-server`)
+- Serve (`npm install serve`)
 
 ### Description
 
