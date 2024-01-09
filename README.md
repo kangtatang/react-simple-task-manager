@@ -4,6 +4,7 @@
 - Using Bootstrap for styling,  (`npm install bootstrap`)
 - json-server for mockup API (`npm install json-server`)
 - Serve (`npm install serve`)
+- Sweetalert (`npm install sweetalert`)
 
 ### Description
 
