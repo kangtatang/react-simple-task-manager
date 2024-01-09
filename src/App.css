@@ -1,0 +1,97 @@
+.App {
+  /* text-align: center; */
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.my-btn{
+  display: inline-block;
+  background-color: black;
+  color: azure;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 15px;
+  font-family: inherit;
+}
+
+.my-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.my-container{
+  width: 500px;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.my-task {
+  padding: 10px;
+  background-color: #ccc;
+  text-align: left;
+  margin-bottom: 5px;
+  color: #282c34;
+}
+
+.my-task h3 {
+  margin: 0 0 5px 0; /* Menambah margin bawah untuk memberi jarak antara h3 dan p */
+}
+
+.my-task p {
+  margin: 0;
+}
+
+.my-task .delete-icon {
+  color: red;
+  cursor: pointer;
+}
+
+.my-task-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.my-reminder{
+  border-left: green 5px solid;
+}
