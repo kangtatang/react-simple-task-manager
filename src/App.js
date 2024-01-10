@@ -76,7 +76,6 @@ function App() {
       title: "Deleted",
       text: words,
       icon: "warning",
-      buttons: false,
       dangerMode: false,
       buttons: {
         ok: "OK"
@@ -89,7 +88,6 @@ function App() {
       title: "Success",
       text: words,
       icon: "success",
-      buttons: false,
       dangerMode: false,
       buttons: {
         ok: "OK"
@@ -98,7 +96,6 @@ function App() {
   };
 
   const addTask = (task) => {
-    // console.log(task);
     const id = Math.floor(Math.random() * 100) + 1;
     const newTask = { id, ...task };
     setTasks([...tasks, newTask]);
@@ -111,7 +108,6 @@ function App() {
   };
 
   const toggleReminder = (id) => {
-    // alert(`toggle  ${id}`);
     setTasks(
       tasks.map((task) =>
         task.id === id ? { ...task, reminder: !task.reminder } : task

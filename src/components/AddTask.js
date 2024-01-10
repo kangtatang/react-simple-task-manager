@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Swal from 'sweetalert';
-
+import Swal from "sweetalert";
+import PropTypes from "prop-types";
 
 const AddTask = ({ onAdd }) => {
   const [text, setText] = useState("");
@@ -8,17 +8,15 @@ const AddTask = ({ onAdd }) => {
   const [reminder, setReminder] = useState(false);
 
   const showAlert = (words) => {
-    // Swal("Task can not be empty!");
     Swal({
       title: "Error",
       text: words,
       icon: "warning",
-      buttons: false,
       dangerMode: false,
       buttons: {
-        ok: "OK"
+        ok: "OK",
       },
-    })
+    });
   };
 
   const showAdd = (words) => {
@@ -26,34 +24,33 @@ const AddTask = ({ onAdd }) => {
       title: "Success",
       text: words,
       icon: "success",
-      buttons: false,
       dangerMode: false,
       buttons: {
-        ok: "OK"
+        ok: "OK",
       },
-    })
+    });
   };
 
   const onSubmit = (e) => {
     e.preventDefault();
-    if(!text){
-        // alert('Task Can not be empty!')
-        showAlert('Task can not be empty!')
-        return
+    if (!text) {
+      // alert('Task Can not be empty!')
+      showAlert("Task can not be empty!");
+      return;
     }
 
-    if(!day){
-      showAlert('Day can not be empty!')
-      return
+    if (!day) {
+      showAlert("Day can not be empty!");
+      return;
     }
 
-    onAdd({text, day, reminder})
+    onAdd({ text, day, reminder });
 
-    setText('')
-    setDay('')
-    setReminder(false)
+    setText("");
+    setDay("");
+    setReminder(false);
 
-    showAdd('Data berhasil disimpan')
+    showAdd("Data berhasil disimpan");
   };
   return (
     <form
@@ -110,6 +107,10 @@ const AddTask = ({ onAdd }) => {
       </div>
     </form>
   );
+};
+
+AddTask.propTypes = {
+  onAdd: PropTypes.func,
 };
 
 export default AddTask;
